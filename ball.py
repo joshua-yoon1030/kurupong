@@ -5,15 +5,15 @@ class Ball(pygame.sprite.Sprite):
         super(Ball, self).__init__()
         self.sw = SCREENWIDTH
         self.sh = SCREEN_HEIGHT
-        self.images = [pygame.image.load("hertaa_1.png"),
-                       pygame.image.load("hertaa_2.png"),
-                       pygame.image.load("hertaa_3.png"),
-                       pygame.image.load("hertaa_4.png"),
-                       pygame.image.load("hertaa_5.png"),
-                       pygame.image.load("hertaa_6.png")
+        self.images = [pygame.image.load("img/hertaa_1.png"),
+                       pygame.image.load("img/hertaa_2.png"),
+                       pygame.image.load("img/hertaa_3.png"),
+                       pygame.image.load("img/hertaa_4.png"),
+                       pygame.image.load("img/hertaa_5.png"),
+                       pygame.image.load("img/hertaa_6.png")
                        ]
         self.index = 0
-        self.surf = pygame.image.load("hertaa_1.png")
+        self.surf = pygame.image.load("img/hertaa_1.png")
         self.rect = self.surf.get_rect(
             center = (
                 SCREENWIDTH/2, SCREEN_HEIGHT/2
@@ -21,8 +21,8 @@ class Ball(pygame.sprite.Sprite):
         )
         self.vx = 5 if random.randint(1, 2) % 2 == 0 else -5
         self.vy = 5 if random.randint(1, 2) % 2 == 0 else -5
-        self.kuru1 = pygame.mixer.Sound("kuru1.wav")
-        self.kuru2 = pygame.mixer.Sound("kuru2.wav")
+        self.kuru1 = pygame.mixer.Sound("sfx/kuru1.ogg")
+        self.kuru2 = pygame.mixer.Sound("sfx/kuru2.ogg")
     def update(self):
         self.rect.move_ip(self.vx, self.vy)
 
